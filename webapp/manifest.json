@@ -72,18 +72,16 @@
 					"defaultOperationMode": "Server",
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request",
-					"useBatch": false 
+					"useBatch": false
 				},
 				"dataSource": "TEA_TEST_APPLICATION",
 				"preload": true
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -93,32 +91,33 @@
 				"viewPath": "ovly.navigation.view",
 				"controlAggregation": "masterPages",
 				"controlId": "app",
-				"clearControlAggregation": false
-			},
-			"routes": [
-				{
-					"name": "inicial ",
-					"pattern": "",
-					"target": [
-						"S1"
-					]
-				},
-				{
-					"name": "equipe",
-					"pattern": "equipe",
-					"target": [
-						"S2" 
-					]
+				"clearControlAggregation": false,
+				"transition": "slide",
+				"bypassed": {
+					"target": ["Empty", "S1"]
 				}
-			],
+			},
+			"routes": [{
+				"name": "inicial",
+				"pattern": "",
+				"target": ["Empty", "S1"]
+			}, {
+				"name": "equipe",
+				"pattern": "equipe/{idEquipe}",
+				"target": ["S1", "S2"]
+			}],
 			"targets": {
 				"S1": {
-					"viewType": "XML",
 					"viewName": "S1"
 				},
 				"S2": {
-					"viewType": "XML",
 					"viewName": "S2",
+					"controlAggregation": "detailPages",
+					"viewLevel": 2
+				},
+				"Empty": {
+					"viewType": "JS",
+					"viewName": "Empty",
 					"controlAggregation": "detailPages"
 				}
 			}

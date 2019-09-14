@@ -14,7 +14,15 @@ sap.ui.define([
 
 		},
 		onItemPress: function (oEvent) {
-			this.getOwnerComponent().getRouter().navTo("equipe");
+			
+			var oParameters = oEvent.getParameters();
+			var oListItem = oParameters.listItem; // NAO EH FUNCAO
+			var oContext = oListItem.getBindingContext();
+			var sId = oContext.getProperty("Team_Identifier"); 
+			
+			this.getOwnerComponent().getRouter().navTo("equipe", { 
+				idEquipe: sId
+			});
 		}
 	});
 
