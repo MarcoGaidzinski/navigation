@@ -23,10 +23,21 @@ sap.ui.define([
 		onBack: function (oEvent) {
 			this.getOwnerComponent().getRouter().navTo("inicial");
 		},
+		
+		onItemPress: function(oEvent){
+			var oParameters = oEvent.getParameters();
+			var oListItem = oParameters.listItem; // NAO EH FUNCAO
+			var oContext = oListItem.getBindingContext();
+			var sId = oContext.getProperty("Id"); 
+			
+			// this.getOwnerComponent().getRouter().navTo("equipe", { 
+			// 	idEquipe: sId
+			// });
+		},
 
 		onPress: function (oEvent) {
 
 		}
 	});
 
-});
+}); 

@@ -79,46 +79,60 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
-				"routerClass": "sap.m.routing.Router",
+				"routerClass": "sap.f.routing.Router",
 				"viewType": "XML",
 				"async": true,
 				"viewPath": "ovly.navigation.view",
-				"controlAggregation": "masterPages",
+				"controlAggregation": "beginColumnPages",
 				"controlId": "app",
 				"clearControlAggregation": false,
 				"transition": "slide",
 				"bypassed": {
-					"target": ["Empty", "S1"]
+					"target": [
+						"Empty",
+						"S1"
+					]
 				}
 			},
-			"routes": [{
-				"name": "inicial",
-				"pattern": "",
-				"target": ["Empty", "S1"]
-			}, {
-				"name": "equipe",
-				"pattern": "equipe/{idEquipe}",
-				"target": ["S1", "S2"]
-			}],
+			"routes": [
+				{
+					"name": "inicial",
+					"pattern": "",
+					"target": [
+						"Empty",
+						"S1"
+					]
+				},
+				{
+					"name": "equipe",
+					"pattern": "equipe/{idEquipe}",
+					"target": [
+						"S1",
+						"S2"
+					]
+				}
+			],
 			"targets": {
 				"S1": {
 					"viewName": "S1"
 				},
 				"S2": {
 					"viewName": "S2",
-					"controlAggregation": "detailPages",
+					"controlAggregation": "midColumnPages",
 					"viewLevel": 2
 				},
 				"Empty": {
 					"viewType": "JS",
 					"viewName": "Empty",
-					"controlAggregation": "detailPages"
+					"controlAggregation": "midColumnPages"
 				}
 			}
 		}

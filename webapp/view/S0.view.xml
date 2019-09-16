@@ -1,12 +1,19 @@
-<mvc:View controllerName="ovly.navigation.controller.S0" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<Shell id="shell">
+<mvc:View controllerName="ovly.navigation.controller.S0" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:m="sap.m" xmlns="sap.f">
+	<m:Shell id="shell">
 		<!--<App id="app">-->
 		<!--	<pages>-->
 		<!--	</pages>-->
 		<!--</App>-->
-		<SplitApp id="app">
-			<masterPages></masterPages>
-			<detailPages></detailPages>
-		</SplitApp>
-	</Shell>
+		<!--<SplitApp id="app">-->
+		<!--	<masterPages>-->
+		<!--	</masterPages>-->
+		<!--	<detailPages>-->
+		<!--	</detailPages>-->
+		<!--</SplitApp>-->
+		<FlexibleColumnLayout id="app" layout="TwoColumnsBeginExpanded">
+			<beginColumnPages></beginColumnPages>
+			<midColumnPages></midColumnPages>
+			<endColumnPages></endColumnPages>
+		</FlexibleColumnLayout>
+	</m:Shell>
 </mvc:View>
